@@ -17,6 +17,22 @@ node {
         sh 'docker rmi -f v localhost:5000/vscode'
       }
     }
+    stage('SSH transfer') { 
+      script {
+        sshPublisher(
+          continueOnError: false, failOnError: true,
+          publishers: [
+            sshPublisherDesc(
+              configName: "${env.SSH_CONFIG_NAME}",
+              verbose: true,
+              transfers: [
+                sshTransfer(
+                  execCommand: "pwd"
+                )
+              ])
+        ])
+      }
+    }
   }
   catch (err) {
     throw err
