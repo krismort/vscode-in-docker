@@ -12,7 +12,7 @@ node {
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
         sh 'docker build -t vscode --no-cache .'
-        sh 'docker tag greetr localhost:5000/vscode'
+        sh 'docker tag vscode localhost:5000/vscode'
         sh 'docker push localhost:5000/vscode'
         sh 'docker rmi -f v localhost:5000/vscode'
       }
