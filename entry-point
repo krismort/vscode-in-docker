@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/usr/bin/code --wait --verbose /home/code/mount

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export DISPLAY=:1
+Xvfb :1 -screen 0 1024x768x16 &
+/usr/bin/code --wait --verbose /home/code/mount &
+x11vnc -env X11VNC_DEBUG_ACCESS=1 -display :1 -forever -usepw &
