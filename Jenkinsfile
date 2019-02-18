@@ -23,7 +23,7 @@ node {
           continueOnError: false, failOnError: true,
           publishers: [
             sshPublisherDesc(
-              configName: "vscode",
+              configName: "35.158.97.253",
               verbose: true,
               transfers: [
                 sshTransfer(
