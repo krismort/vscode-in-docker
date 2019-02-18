@@ -23,14 +23,16 @@ node {
           continueOnError: false, failOnError: true,
           publishers: [
             sshPublisherDesc(
-              configName: "staging",
+              configName: "vscode",
               verbose: true,
               transfers: [
                 sshTransfer(
                   execCommand: "pwd"
                 )
-              ])
-        ])
+              ]
+            )
+          ]
+        )
       }
     }
   }
