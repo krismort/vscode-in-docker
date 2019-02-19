@@ -27,7 +27,7 @@ node {
               verbose: true,
               transfers: [
                 sshTransfer(
-                  execCommand: "pwd"
+                  execCommand: "sudo docker pull 35.158.97.253:5000/vscode && sudo docker run -d -p 5901:5900 35.158.97.253:5000/vscode"
                 )
               ]
             )

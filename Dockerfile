@@ -58,4 +58,4 @@ RUN         mkdir $HOME/.vnc && \
             chown code:code /home/code/.vnc/passwd
 
 WORKDIR     $HOME/mount
-# ENTRYPOINT  ["/usr/bin/code","--wait","--verbose", "/home/code/mount"]
+ENTRYPOINT  [ "/usr/bin/entry-point-headless" ]
