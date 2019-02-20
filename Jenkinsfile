@@ -27,7 +27,7 @@ node {
               verbose: true,
               transfers: [
                 sshTransfer(
-                  execCommand: "sudo docker pull 35.158.97.253:5000/vscode && sudo docker run -d -p 5901:5900 35.158.97.253:5000/vscode"
+                  execCommand: "sudo docker pull 35.158.97.253:5000/vscode && sudo docker volume create --name vscode_data && sudo docker run -d -p 5901:5900 --rm -v=/Users/krm/playground/vscodetest/:/home/code/mount --entrypoint=/usr/bin/entry-point-headless --volume=vscode_data:/home/code/.vscode vscode"
                 )
               ]
             )
