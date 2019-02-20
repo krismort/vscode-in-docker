@@ -1,9 +1,10 @@
 #!/bin/bash
 echo "Starting"
 export DISPLAY=:1
+which Xvfb
 Xvfb :1 -screen 0 1024x768x16 &
-sleep 3
+which code
 /usr/bin/code --wait --verbose /home/code/mount &
-sleep 3
-x11vnc -env X11VNC_DEBUG_ACCESS=1 -display :1 -forever -usepw
+which x11vnc
+x11vnc -env X11VNC_DEBUG_ACCESS=1 -display :1 -forever -usepw &
 echo "Done"

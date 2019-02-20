@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+handle_cfg_dir() {
+  # Create volume if it doesnt exist.
+  if ! /usr/local/bin/docker volume inspect vscode_data >/dev/null 2>&1; then
+    Z/usr/local/bin/docker volume create --name vscode_data
+  fi
+  VOL_MAP="--volume=vscode_data:/home/code/.vscode"
+}
+
+handle_cfg_dir
+
+docker run -d -p 5901:5900 --rm \
+  -v=/Users/krm/playground/vscodetest/:/home/code/mount \
+  --entrypoint=/usr/bin/entry-point-headless \
+  $VOL_MAP vscode
+

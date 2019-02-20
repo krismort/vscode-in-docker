@@ -44,6 +44,8 @@ COPY        entry-point-headless /usr/bin/entry-point-headless
 RUN         chmod +x /usr/bin/entry-point-headless
 COPY        entry-point /usr/bin/entry-point
 RUN         chmod +x /usr/bin/entry-point
+COPY        entry-point /usr/bin/entry-point-shell
+RUN         chmod +x /usr/bin/entry-point-shell
 
 EXPOSE      $VNC_PORT $NO_VNC_PORT
 
