@@ -19,6 +19,8 @@ RUN         apt-get update && \
                 libasound2 && \
             npm install -g typescript
 
+RUN         ln -s /usr/bin/nodejs /usr/bin/node﻿
+
 RUN         apt-get install -y firefox sudo x11vnc xvfb
 
 RUN         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
