@@ -17,6 +17,7 @@ RUN         apt-get update && \
                 libgtk2.0 \
                 libgconf-2-4 \
                 libasound2 && \
+                git && \
             npm install -g typescript
 
 RUN         apt-get install -y firefox sudo x11vnc xvfb
